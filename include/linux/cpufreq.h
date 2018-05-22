@@ -610,7 +610,7 @@ int sugov_fast_start(struct cpufreq_policy *policy, unsigned int cpu);
 static inline int sugov_fast_start(struct cpufreq_policy *policy, unsigned int cpu) { return 0; }
 #endif
 
-static inline bool cpufreq_can_do_remote_dvfs(struct cpufreq_policy *policy)
+static inline bool cpufreq_this_cpu_can_update(struct cpufreq_policy *policy)
 {
 	/* Allow remote callbacks only on the CPUs sharing cpufreq policy */
 	if (cpumask_test_cpu(smp_processor_id(), policy->cpus))

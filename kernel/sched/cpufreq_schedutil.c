@@ -62,6 +62,7 @@ struct sugov_policy {
 struct sugov_cpu {
 	struct update_util_data update_util;
 	struct sugov_policy *sg_policy;
+	unsigned int cpu;
 
 	unsigned long iowait_boost;
 	unsigned long iowait_boost_max;
